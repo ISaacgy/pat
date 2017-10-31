@@ -1,0 +1,22 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+	int n,num,score;
+	cin >> n;
+	vector<int> sum(n);
+	for (int i = 0;i < n;i++) {
+		cin >> num >> score;
+		sum[num] += score;
+	}
+	int max = sum[1];
+	int t=1;
+	for (int i = 1;i < num;i++) {
+		if (max < sum[i]) {
+			max = sum[i];
+			t = i;
+		}
+	}
+	cout << t << " " << max;
+	return 0;
+}
