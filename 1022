@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int a, b, d;
+	cin >> a >> b >> d;
+	if ((a + b) == 0)
+		cout << 0;
+	int s = a + b;
+	int n[500];
+	int c = 0;
+	while (s) {
+		n[c++] = s % d;
+		s /= d;		
+	}
+	for (int j = c - 1;j >= 0;j--)
+		cout << n[j];
+	return 0;
+}
