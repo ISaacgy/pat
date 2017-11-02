@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int n;
+	cin >> n;
+	int *Arr = new int[n];
+	int sum = 0;
+	for (int i = 0;i < n;i++) {
+		cin >> Arr[i];
+	}
+	for (int i = 0;i < n;i++) {
+		for (int k = 0;k < n;k++) {
+			if (k!=i) {
+				sum += (Arr[i]*10 + Arr[k]);
+			}
+		}
+	}
+	cout << sum;
+	return 0;
+	delete[]Arr;
+}
