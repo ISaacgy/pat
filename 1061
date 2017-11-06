@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int m, n;
+	cin >> m>>n;
+	int *maxs = new int[n];
+	int *rights = new int[n];
+	int *score = new int[n];
+	for (int i = 0;i < n;i++) 
+		cin >> maxs[i];
+	for (int i = 0;i < n;i++)
+		cin >> rights[i];
+	int *sum = new int[m];
+	for (int i = 0;i < m;i++) {
+		for (int j = 0;j < n;j++) {
+			cin >> score[j];
+			if (score[j] == rights[j]) {
+				sum[i] += maxs[j];
+			}
+		}
+	}
+	for (int i = 0;i < m;i++)
+		cout << sum[i] << endl;
+	return 0;
+}
