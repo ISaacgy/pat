@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int n;
+	cin >> n;
+	int *Arr = new int[n];
+	for (int i = 0;i < n;i++)
+		cin >> Arr[i];
+	for (int i = 0;i < n;i++) {
+		for (int j = 0;j < n - 1 - i;j++) {
+			if (Arr[j] > Arr[j+1]) {
+				int temp = Arr[j];
+				Arr[j] = Arr[j + 1];
+				Arr[j + 1] = temp;
+			}
+		}
+	}
+	int sum = Arr[0];
+	for (int i = 1;i < n;i++) {
+		sum = (sum + Arr[i]) / 2;
+	}
+	cout << sum;
+	return 0;
+}
