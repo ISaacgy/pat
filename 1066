@@ -1,0 +1,31 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main() {
+	int m, n, a, b, temp;
+	cin >> m >> n >> a >> b >> temp;
+	vector<vector<int> >Arr(m, vector<int>(n));
+	for (int i = 0;i < m;i++)
+		for (int j = 0;j < n;j++) 
+			cin >> Arr[i][j];
+	for (int i = 0;i < m;i++) {
+		for (int j = 0;j < n;j++) {
+			if (Arr[i][j] >= a&&Arr[i][j] <= b)
+				Arr[i][j] = temp;
+			if (Arr[i][j] >= 0 && Arr[i][j] <= 9 && j < n - 1)
+				cout << "00" << Arr[i][j] << " ";
+			else if (Arr[i][j] >= 10 && Arr[i][j] <= 99 && j < n - 1)
+				cout << '0' << Arr[i][j] << " ";
+			else if (Arr[i][j] >= 0 && Arr[i][j] <= 9 && j == n - 1)
+				cout << "00" << Arr[i][j] << endl;
+			else if (Arr[i][j] >= 10 && Arr[i][j] <= 99 && j == n - 1)
+				cout << '0' << Arr[i][j] << endl;
+			else if (j == n - 1 && Arr[i][j] >= 100 && Arr[i][j] <= 255)
+				cout << Arr[i][j] << endl;
+			else
+				cout << Arr[i][j] << " ";
+				
+		}
+	}
+	return 0;
+}
