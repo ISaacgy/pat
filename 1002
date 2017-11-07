@@ -1,0 +1,24 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main() {
+	string s;
+	cin >> s;
+	int sum = 0;
+	string num[10] = { "ling","yi","er","san","si","wu","liu","qi","ba","jiu" };
+	for (int i = 0;i < s.length();i++) 
+		sum += s[i]-'0';
+	int *Arr = new int[s.length()];
+	int a = 0;
+	if (sum == 0)
+		cout << "ling";
+	else
+		while (sum) {
+			Arr[a++] = sum % 10;
+			sum /= 10;
+		}
+	for (int i = a - 1;i >= 1;i--)
+		cout << num[Arr[i]]<<" ";
+	cout << num[Arr[0]];
+	return 0;
+}
