@@ -1,0 +1,36 @@
+#include<iostream>
+#include<string>
+#include<vector>
+using namespace std;
+int main() {
+	vector<string> str(80);
+	string s;
+	int count = 0;
+	while (cin >> s) {
+		str[count] = s;
+		count++;
+	}
+	for (int i = count-1;i > 0;i--)
+		cout << str[i] << " ";
+	cout << str[0];
+	return 0;
+}
+
+#include<iostream>
+#include<string>
+#include<stack>
+using namespace std;
+int main() {
+	stack<string> s;
+	string str;
+	while (cin >> str) {
+		s.push(str);
+	}
+	cout << s.top();
+	s.pop();
+	while (!s.empty()) {
+		cout << " " << s.top();
+		s.pop();
+	}
+	return 0;
+}
