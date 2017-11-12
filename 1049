@@ -1,0 +1,16 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main(){
+	int n;
+	cin >> n;
+	double *Arr = new double[n];
+	double sum = 0.0;
+	for (int i = 1;i <= n;i++) {
+		cin >> Arr[i];
+		sum += Arr[i] * i*(n - i + 1);
+	}
+	cout <<setiosflags(ios::fixed)<<setprecision(2)<< sum;
+	delete[]Arr;
+	return 0;
+}
