@@ -1,0 +1,20 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main() {
+  int n;
+  cin >> n;
+  vector<int> score(n), grade(101);
+  for (int i = 0;i < n;i++) {
+    cin >> score[i];
+    grade[score[i]]++;
+  }
+  int k,find;
+  cin >> k;
+  for (int i = 0;i < k;i++) {
+    cin >> find;
+    cout << grade[find];
+    if (i != k - 1)cout << " ";
+  }
+  return 0;
+}
