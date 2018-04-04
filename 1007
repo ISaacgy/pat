@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+bool isPrime(int x) {
+	for (int i = 2;i*i<=x;i++) {     //判断素数条件时等号不要忘了
+		if (x%i == 0)
+			return false;
+	}
+	return true;
+}
+int main() {
+	int n, res = 0;
+	cin >> n;
+	for (int i = 3;i < n - 1;i++) {
+		if (isPrime(i) && isPrime(i + 2))
+			res++;
+	}
+	cout << res;
+	return 0;
+}
